@@ -30,7 +30,7 @@ mongoose.connection.on('opening', function() {
 });
 
 var user = new User({
-    name : name,
+    name : username,
     firstname : firstname,
     lastname : lastname,
     username : username,
@@ -44,7 +44,7 @@ var user = new User({
     email : {
         verified : true,
         type : "phone",
-        contact : name
+        contact : username
     },
     user_meta : {
         role : "superadmin"
@@ -243,7 +243,7 @@ var UserAccount = new UserAccount({
         user_meta : {
             role : "superadmin"
         },
-        user : name,
+        user : username,
         tenant : 1,
         company : 1,
         created_at : Date.now(),
@@ -1227,9 +1227,9 @@ UserAccount.save(function (err, result){
 
 
 var Organisation=new Organisation({
-        ownerId : name,
+        ownerId : username,
         ownerRef : "576d17f2dd751f010089d15e",
-        companyName : name,
+        companyName : username,
         companyEnabled : true,
         id : 1,
         tenant : 1,
@@ -1239,7 +1239,7 @@ var Organisation=new Organisation({
                 accessType : "superadmin",
                 accessLimit : 1,
                 currentAccess : [
-                    name
+                    username
                 ]
             }
         ],
