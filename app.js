@@ -1,16 +1,16 @@
-var tenant=process.argv[3]
-var company=process.argv[4]
-var firstname=process.argv[5]
-var lastname=process.argv[6]
-var username=process.argv[7]
-var password=process.argv[8]
-var phone=process.argv[9]
-var numbr=process.argv[10]
-var email=process.argv[11]
-var country=process.argv[12]
-var province=process.argv[13]
-var city=process.argv[14]
-var street=process.argv[15]
+// var tenant=process.argv[3]
+// var company=process.argv[4]
+// var firstname=process.argv[5]
+// var lastname=process.argv[6]
+// var username=process.argv[7]
+// var password=process.argv[8]
+// var phone=process.argv[9]
+// var numbr=process.argv[10]
+// var email=process.argv[11]
+// var country=process.argv[12]
+// var province=process.argv[13]
+// var city=process.argv[14]
+// var street=process.argv[15]
 
 var User = require('dvp-mongomodels/model/User');
 var UserAccount = require('dvp-mongomodels/model/UserAccount');
@@ -30,28 +30,28 @@ mongoose.connection.on('opening', function() {
 });
 
 var user = new User({
-    name : username,
-    firstname : firstname,
-    lastname : lastname,
-    username : username,
-    password : password,
+    name : "facetoneowner",
+    firstname : "facetoneowner",
+    lastname : "facetoneowner",
+    username : "facetoneowner",
+    password : "$2a$10$nWPLXb4p5wEWvk3g.YRdfOw7d1kAvPuvd45P.1AEaJyv9E0TtZfAe",
     multi_login : true,
     phoneNumber : {
         verified : false,
         type : "phone",
-        contact : phone
+        contact : "0771234567"
     },
     email : {
         verified : true,
         type : "phone",
-        contact : username
+        contact : "facetoneowner"
     },
     user_meta : {
         role : "superadmin"
     },
     systemuser : true,
-    company : company,
-    tenant : tenant,
+    company : 1,
+    tenant : 1,
     client_scopes : [
         {
             consoleName : "OPERATOR_CONSOLE",
@@ -216,11 +216,11 @@ var user = new User({
     gender : "male",
     avatar : "",
     address : {
-        number : numbr,
-        street : street,
-        city : city,
-        province : province,
-        country : country,
+        number : "403",
+        street : "Galle Road",
+        city : "Colombo 03",
+        province : "Western",
+        country : "Sri Lanka",
         zipcode : "00300"
     },
     verified : true,
@@ -243,7 +243,7 @@ var UserAccount = new UserAccount({
         user_meta : {
             role : "superadmin"
         },
-        user : username,
+        user : "facetoneowner",
         tenant : 1,
         company : 1,
         created_at : Date.now(),
@@ -1227,9 +1227,9 @@ UserAccount.save(function (err, result){
 
 
 var Organisation=new Organisation({
-        ownerId : username,
+        ownerId : "facetoneowner",
         ownerRef : "576d17f2dd751f010089d15e",
-        companyName : username,
+        companyName : "facetoneowner",
         companyEnabled : true,
         id : 1,
         tenant : 1,
@@ -1239,7 +1239,7 @@ var Organisation=new Organisation({
                 accessType : "superadmin",
                 accessLimit : 1,
                 currentAccess : [
-                    username
+                    "facetoneowner"
                 ]
             }
         ],
