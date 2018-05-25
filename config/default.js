@@ -3,7 +3,7 @@ module.exports = {
     "Type":"postgres",
     "User":"duo",
     "Password":"DuoS123",
-    "Port":27017,
+    "Port":5432,
     "Host":"localhost",
     "Database":"duo"
   },
