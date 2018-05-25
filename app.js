@@ -18,7 +18,7 @@ var Organisation = require('dvp-mongomodels/model/Organisation');
 var config = require("config");
 const mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/my_database');
-var url='mongodb://'+config.DB.Host+':'+config.DB.Port+'/'+config.DB.Database
+var url='mongodb://'+config.Mongo.ip+':'+config.Mongo.port+'/'+config.Mongo.dbname
 mongoose.connect(url,{server:{auto_reconnect:true}})
 mongoose.connection.on('error', function (err) {
     console.error( new Error(err));
