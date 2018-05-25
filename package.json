@@ -1,0 +1,17 @@
+{
+  "name": "masterdata",
+  "version": "0.0.0",
+  "description": "master data container",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "config": "^1.30.0"
+  },
+  "dependencies": {
+    "dvp-mongomodels": "^5.0.18"
+  }
+}
